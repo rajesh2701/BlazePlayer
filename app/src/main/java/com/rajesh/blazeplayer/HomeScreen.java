@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.rajesh.blazeplayer.activities.AlbumsActivity;
+import com.rajesh.blazeplayer.activities.ArtistActivity;
 import com.rajesh.blazeplayer.activities.SongsActivity;
 
 
@@ -52,6 +53,7 @@ public class HomeScreen extends ActionBarActivity implements View.OnClickListene
 
             case R.id.button_artist:
 
+                startActivity(new Intent(HomeScreen.this, ArtistActivity.class));
                 break;
 
             case R.id.button_playlist:

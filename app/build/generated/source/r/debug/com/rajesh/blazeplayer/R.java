@@ -1424,10 +1424,11 @@ containing a value of this type.
         public static final int album_screen=0x7f040016;
         public static final int albumview=0x7f040017;
         public static final int app_bar=0x7f040018;
-        public static final int mainscreen=0x7f040019;
-        public static final int songs_screen=0x7f04001a;
-        public static final int songview=0x7f04001b;
-        public static final int support_simple_spinner_dropdown_item=0x7f04001c;
+        public static final int artistview=0x7f040019;
+        public static final int mainscreen=0x7f04001a;
+        public static final int songs_screen=0x7f04001b;
+        public static final int songview=0x7f04001c;
+        public static final int support_simple_spinner_dropdown_item=0x7f04001d;
     }
     public static final class menu {
         public static final int menu_home=0x7f0d0000;
