@@ -1,69 +1,73 @@
 package com.rajesh.blazeplayer;
 
-import android.content.ContentProvider;
-import android.content.ContentResolver;
-import android.database.Cursor;
-import android.net.Uri;
-import android.provider.MediaStore;
-import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ListView;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.Button;
 
-import com.rajesh.blazeplayer.adapter.SongsAdapter;
-import com.rajesh.blazeplayer.model.Song;
-
-import java.util.ArrayList;
+import com.rajesh.blazeplayer.activities.AlbumsActivity;
+import com.rajesh.blazeplayer.activities.SongsActivity;
 
 
-public class HomeScreen extends ActionBarActivity
+public class HomeScreen extends ActionBarActivity implements View.OnClickListener
 {
 
-    ArrayList<Song> songsList;
-    ListView listSongs;
-
+    Button btn_Album,btn_Artist,btn_Playlist,btn_Songs,btn_Genre;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_screen);
+        setContentView(R.layout.mainscreen);
 
-        songsList = new ArrayList<Song>();
+        Toolbar toolbar = (Toolbar)findViewById(R.id.appBar);
+        setSupportActionBar(toolbar);
 
-        listSongs = (ListView)findViewById(R.id.songsList);
+        toolbar.setTitle(getString(R.string.app_name));
 
-        getSongsList();
+        btn_Album = (Button)findViewById(R.id.button_album);
+        btn_Artist = (Button)findViewById(R.id.button_artist);
+        btn_Playlist = (Button)findViewById(R.id.button_playlist);
+        btn_Songs = (Button)findViewById(R.id.button_songs);
+        btn_Genre = (Button)findViewById(R.id.button_genre);
 
-        SongsAdapter songsAdapter = new SongsAdapter(HomeScreen.this,songsList);
-        listSongs.setAdapter(songsAdapter);
-
+        btn_Album.setOnClickListener(this);
+        btn_Artist.setOnClickListener(this);
+        btn_Playlist.setOnClickListener(this);
+        btn_Songs.setOnClickListener(this);
+        btn_Genre.setOnClickListener(this);
     }
 
-
-    public ArrayList<Song> getSongsList()
+    @Override
+    public void onClick(View v)
     {
-        ContentResolver contentResolver = getContentResolver();
-        Uri musicUri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
-
-        Cursor musicCursor = contentResolver.query(musicUri,null,null,null,"ASC");
-
-        if(musicCursor != null && musicCursor.moveToFirst())
+        int viewId = v.getId();
+        switch (viewId)
         {
-            int idColoumn = musicCursor.getColumnIndex(MediaStore.Audio.Media._ID);
-            int songNameColumn = musicCursor.getColumnIndex(MediaStore.Audio.Media.TITLE);
-            int songArtistColoumn = musicCursor.getColumnIndex(MediaStore.Audio.Media.ARTIST);
+            case R.id.button_album:
 
-            do
-            {
-                long songId = musicCursor.getLong(idColoumn);
-                String songName = musicCursor.getString(songNameColumn);
-                String songArtist  = musicCursor.getString(songArtistColoumn);
+                startActivity(new Intent(HomeScreen.this, AlbumsActivity.class));
+                break;
 
-                songsList.add( new Song(songId,songName,songArtist));
-            }
-            while (musicCursor.moveToNext());
+            case R.id.button_artist:
+
+                break;
+
+            case R.id.button_playlist:
+
+                break;
+
+            case R.id.button_songs:
+
+                startActivity(new Intent(HomeScreen.this, SongsActivity.class));
+
+                break;
+
+            case R.id.button_genre:
+
+                break;
         }
-
-        return songsList;
 
     }
 }

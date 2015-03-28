@@ -1,6 +1,14 @@
 <resources>
-    <string name="app_name">BlazePlayer</string>
+    <string name="app_name">Blaze Player</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <string name="btn_albums">Albums</string>
+    <string name="btn_artists">Artists</string>
+    <string name="btn_playlist">Playlists</string>
+    <string name="btn_songs">Songs</string>
+    <string name="btn_genre">Genre</string>
+
+
 </resources>
