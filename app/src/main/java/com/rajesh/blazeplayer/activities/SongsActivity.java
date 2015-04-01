@@ -1,6 +1,7 @@
 package com.rajesh.blazeplayer.activities;
 
 import android.content.ContentResolver;
+import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -14,6 +15,8 @@ import android.widget.Toast;
 import com.rajesh.blazeplayer.R;
 import com.rajesh.blazeplayer.adapter.SongsAdapter;
 import com.rajesh.blazeplayer.model.Song;
+import com.rajesh.blazeplayer.services.MusicController;
+import com.rajesh.blazeplayer.services.MusicplayerService;
 
 import java.util.ArrayList;
 
@@ -26,6 +29,15 @@ public class SongsActivity extends ActionBarActivity
 {
     ArrayList<Song> songsList;
     ListView listSongs;
+
+
+    MusicplayerService musicplayerService;
+    private boolean bind = false;
+    MusicController musicController ;
+
+    Intent playIntent;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)

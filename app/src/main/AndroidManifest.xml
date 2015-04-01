@@ -2,15 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.rajesh.blazeplayer" >
 
-
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/MaterialTheme" >
-
         <activity
             android:name=".HomeScreen"
             android:label="@string/app_name" >
@@ -20,12 +18,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activities.SongsActivity" />
+        <activity android:name=".activities.AlbumsActivity" />
+        <activity android:name=".activities.ArtistActivity" />
+        <activity android:name=".activities.AlbumSongsActivity" />
 
-        <activity android:name=".activities.SongsActivity"></activity>
-        <activity android:name=".activities.AlbumsActivity"></activity>
-        <activity android:name=".activities.ArtistActivity"></activity>
-        <activity android:name=".activities.AlbumSongsActivity"></activity>
-
+        <service
+            android:name=".services.MusicplayerService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
     </application>
 
 </manifest>
