@@ -24,6 +24,7 @@
         <activity android:name=".activities.SongsActivity"></activity>
         <activity android:name=".activities.AlbumsActivity"></activity>
         <activity android:name=".activities.ArtistActivity"></activity>
+        <activity android:name=".activities.AlbumSongsActivity"></activity>
 
     </application>
 

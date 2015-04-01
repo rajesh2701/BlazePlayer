@@ -37,6 +37,7 @@ public class ArtistActivity extends ActionBarActivity
 
         artistList = new ArrayList<Artist>();
         albumListView = (ListView)findViewById(R.id.albumsList);
+        albumListView.setFastScrollEnabled(true);
 
         getAlbumsList();
 

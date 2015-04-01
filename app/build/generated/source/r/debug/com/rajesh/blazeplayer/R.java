@@ -1337,11 +1337,11 @@ containing a value of this type.
         public static final int always=0x7f090016;
         public static final int appBar=0x7f09003f;
         public static final int beginning=0x7f090013;
-        public static final int button_album=0x7f090043;
-        public static final int button_artist=0x7f090044;
-        public static final int button_genre=0x7f090047;
-        public static final int button_playlist=0x7f090045;
-        public static final int button_songs=0x7f090046;
+        public static final int button_album=0x7f090044;
+        public static final int button_artist=0x7f090045;
+        public static final int button_genre=0x7f090048;
+        public static final int button_playlist=0x7f090046;
+        public static final int button_songs=0x7f090047;
         public static final int checkbox=0x7f090029;
         public static final int collapseActionView=0x7f090017;
         public static final int decor_content_parent=0x7f09002f;
@@ -1381,13 +1381,13 @@ containing a value of this type.
         public static final int showCustom=0x7f09000f;
         public static final int showHome=0x7f090010;
         public static final int showTitle=0x7f090011;
-        public static final int songsList=0x7f090048;
+        public static final int songsList=0x7f090041;
         public static final int split_action_bar=0x7f090007;
         public static final int submit_area=0x7f09003c;
         public static final int tabMode=0x7f09000b;
         public static final int title=0x7f090027;
-        public static final int tv_Songartist=0x7f090042;
-        public static final int tv_Songname=0x7f090041;
+        public static final int tv_Songartist=0x7f090043;
+        public static final int tv_Songname=0x7f090042;
         public static final int up=0x7f090008;
         public static final int useLogo=0x7f090012;
         public static final int withText=0x7f09001a;
@@ -1422,13 +1422,14 @@ containing a value of this type.
         public static final int abc_search_view=0x7f040014;
         public static final int abc_simple_dropdown_hint=0x7f040015;
         public static final int album_screen=0x7f040016;
-        public static final int albumview=0x7f040017;
-        public static final int app_bar=0x7f040018;
-        public static final int artistview=0x7f040019;
-        public static final int mainscreen=0x7f04001a;
-        public static final int songs_screen=0x7f04001b;
-        public static final int songview=0x7f04001c;
-        public static final int support_simple_spinner_dropdown_item=0x7f04001d;
+        public static final int albumsongs=0x7f040017;
+        public static final int albumview=0x7f040018;
+        public static final int app_bar=0x7f040019;
+        public static final int artistview=0x7f04001a;
+        public static final int mainscreen=0x7f04001b;
+        public static final int songs_screen=0x7f04001c;
+        public static final int songview=0x7f04001d;
+        public static final int support_simple_spinner_dropdown_item=0x7f04001e;
     }
     public static final class menu {
         public static final int menu_home=0x7f0d0000;

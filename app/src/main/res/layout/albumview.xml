@@ -5,6 +5,7 @@
     android:background="@drawable/songviewbg"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:onClick="albumPicked"
     android:padding="8dp">
 
     <TextView

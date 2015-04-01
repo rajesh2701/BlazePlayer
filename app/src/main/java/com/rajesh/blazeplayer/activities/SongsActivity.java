@@ -41,6 +41,7 @@ public class SongsActivity extends ActionBarActivity
         songsList = new ArrayList<Song>();
 
         listSongs = (ListView)findViewById(R.id.songsList);
+        listSongs.setFastScrollEnabled(true);
 
         getSongsList();
 
