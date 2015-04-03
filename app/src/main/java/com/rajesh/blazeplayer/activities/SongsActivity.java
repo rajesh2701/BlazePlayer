@@ -1,10 +1,13 @@
 package com.rajesh.blazeplayer.activities;
 
+import android.content.ComponentName;
 import android.content.ContentResolver;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
@@ -67,6 +70,24 @@ public class SongsActivity extends ActionBarActivity
         String number = view.getTag().toString();
         Toast.makeText(SongsActivity.this, number, Toast.LENGTH_SHORT).show();
     }
+
+    private ServiceConnection serviceConnection = new ServiceConnection()
+    {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service)
+        {
+            MusicplayerService.MusicBinder binder = (MusicplayerService.MusicBinder)service;
+            musicplayerService = binder.getService();
+            musicplayerService.setSongsList(songsList);
+            bind = true;
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name)
+        {
+             bind = false;
+        }
+    };
 
 
     public ArrayList<Song> getSongsList()
